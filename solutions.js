@@ -1,3 +1,4 @@
+// problem 1
 function multiplesOf3And5(num) {
   const multiples = [];
   for (let i = 1; i < num; i += 1) {
@@ -8,6 +9,7 @@ function multiplesOf3And5(num) {
   return multiples.reduce((maxNum, num2) => maxNum + num2);
 }
 
+// problem 2
 function fiboEvenSum(n) {
   const sequence = [1, 2];
   while (sequence[sequence.length - 1] < n) {
@@ -20,6 +22,7 @@ function fiboEvenSum(n) {
     .reduce((maxNum, num2) => maxNum + num2);
 }
 
+// problem 3
 function largestPrimeFactor(number) {
   let i = 2;
   let num = number;
@@ -33,6 +36,7 @@ function largestPrimeFactor(number) {
   return i;
 }
 
+// problem 4
 function largestPalindromeProduct(n) {
   const maxNum = '9'.repeat(n) - '';
   const palindromeProducts = [];
@@ -51,3 +55,23 @@ function largestPalindromeProduct(n) {
   }
   return Math.max(...palindromeProducts);
 }
+
+// problem 5
+function smallestMult(n) {
+  let smallestMultiple = 0;
+  const nums = [];
+  for (let i = 1; i <= n; i += 1) {
+    nums.push(i);
+  }
+
+  const isNumberMultiple = (number) => nums.every((num) => number % num === 0);
+
+  for (let i = 2; smallestMultiple === 0; i += 2) {
+    if (isNumberMultiple(i)) {
+      smallestMultiple = i;
+    }
+  }
+  return smallestMultiple;
+}
+
+console.log(smallestMult(5));
