@@ -74,4 +74,14 @@ function smallestMult(n) {
   return smallestMultiple;
 }
 
-console.log(smallestMult(5));
+// problem 6
+function sumSquareDifference(num) {
+  const nums = [];
+  for (let i = 1; i <= num; i += 1) {
+    nums.push(i);
+  }
+  const squareOfSum = nums.reduce((n1, n2) => n1 + n2) ** 2;
+  const sumOfSquares = nums.map((n) => n ** 2).reduce((n1, n2) => n1 + n2);
+
+  return squareOfSum - sumOfSquares;
+}
