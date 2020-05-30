@@ -85,3 +85,22 @@ function sumSquareDifference(num) {
 
   return squareOfSum - sumOfSquares;
 }
+
+// problem 7
+function nthPrime(n) {
+  let counter = 1;
+  let prime = 2;
+  const isPrime = (num) => {
+    for (let i = 2; i < num; i += 1) {
+      if (num % i === 0) return false;
+    }
+    return num > 1;
+  };
+  for (let i = 1; counter !== n; i += 2) {
+    if (isPrime(i)) {
+      counter += 1;
+      prime = i;
+    }
+  }
+  return prime;
+}
