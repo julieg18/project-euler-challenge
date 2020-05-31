@@ -1,3 +1,5 @@
+const thousandDigits = require('./thousand-digits.js');
+
 // problem 1
 function multiplesOf3And5(num) {
   const multiples = [];
@@ -103,4 +105,17 @@ function nthPrime(n) {
     }
   }
   return prime;
+}
+
+// problem 8
+function largestProductinaSeries(n) {
+  // Good luck!
+  let max = 0;
+  for (let i = 0; i < thousandDigits.length - n; i += 1) {
+    const product = thousandDigits.slice(i, i + n).reduce((n1, n2) => n1 * n2);
+    if (max < product) {
+      max = product;
+    }
+  }
+  return max;
 }
